@@ -5,7 +5,7 @@ namespace Healthcare.Domain
     public sealed partial class Patient
     {
         public static implicit operator PatientDto(Patient patient)
-            => new PatientDto 
+            => new ()
             {
                 Id = patient.Id,
                 Name = patient.Name,
@@ -13,7 +13,7 @@ namespace Healthcare.Domain
             };
 
         public static explicit operator PatientQuery(Patient patient)
-            => new PatientQuery 
+            => new()
             {
                 Id = patient.Id,
                 FirstName = patient.FirstName,
