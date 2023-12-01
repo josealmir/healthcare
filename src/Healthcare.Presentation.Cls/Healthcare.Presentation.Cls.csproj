@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Healthcare.Domain\Healthcare.Domain.csproj" />
+    <ProjectReference Include="..\..\Healthcare.Domain\Healthcare.Domain.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

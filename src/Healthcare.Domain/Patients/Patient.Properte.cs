@@ -1,6 +1,6 @@
 using Healthcare.Domain.Enuns;
 
-namespace Healthcare.Domain
+namespace Healthcare.Domain.Patients
 {
     public sealed partial class Patient : Audit
     {
@@ -10,6 +10,9 @@ namespace Healthcare.Domain
         public Address Address { get; private set; }
         public string Name => FirstName + LastName;
         public override bool IsActive => !DeletedIn.HasValue;
+
+        private Patient()
+        {}
 
         public Patient(string firstName, string lastName, EGender gender)
         {

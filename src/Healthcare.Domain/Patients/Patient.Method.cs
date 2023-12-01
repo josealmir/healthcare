@@ -1,6 +1,6 @@
 using Healthcare.Domain.Dtos;
 
-namespace Healthcare.Domain
+namespace Healthcare.Domain.Patients
 {
     public sealed partial class Patient
     {
@@ -8,7 +8,7 @@ namespace Healthcare.Domain
             => new ()
             {
                 Id = patient.Id,
-                Name = patient.Name,
+                FullName = $"{patient.FirstName} {patient.LastName}",
                 Gender = patient.Gender,
             };
 
