@@ -1,25 +1,28 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1F775624-A479-4874-9C16-E6199E44BF0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcare.Domain", "src\Healthcare.Domain\Healthcare.Domain.csproj", "{034DF9F4-4BA8-4169-9FB9-8BB630A5DE25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Healthcare.Domain", "src\Healthcare.Domain\Healthcare.Domain.csproj", "{034DF9F4-4BA8-4169-9FB9-8BB630A5DE25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcare.Presentation.Cls", "src\Healthcare.Presentation.Cls\Healthcare.Presentation.Cls.csproj", "{B29B419E-B199-436C-BA1D-AF3486A00327}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Healthcare.Presentation.Cls", "src\Healthcare.Presentation.Cls\Healthcare.Presentation.Cls.csproj", "{B29B419E-B199-436C-BA1D-AF3486A00327}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcare.Data", "src\Healthcare.Data\Healthcare.Data.csproj", "{6F945356-72E6-446E-8325-5089CC176D06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Healthcare.Data", "src\Healthcare.Data\Healthcare.Data.csproj", "{6F945356-72E6-446E-8325-5089CC176D06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcare.IoC", "src\Healthcare.IoC\Healthcare.IoC.csproj", "{0473A61C-FF70-458B-B9B6-30C0DAEA7784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Healthcare.IoC", "src\Healthcare.IoC\Healthcare.IoC.csproj", "{0473A61C-FF70-458B-B9B6-30C0DAEA7784}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Healthcare.Api", "src\Healthcare.Api\Healthcare.Api.csproj", "{3248005C-D771-4C15-9A49-51150DB96C70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F2AF32D-3940-4E5F-8D01-4BFB6917DC96}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{034DF9F4-4BA8-4169-9FB9-8BB630A5DE25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -38,11 +41,19 @@ Global
 		{0473A61C-FF70-458B-B9B6-30C0DAEA7784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0473A61C-FF70-458B-B9B6-30C0DAEA7784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0473A61C-FF70-458B-B9B6-30C0DAEA7784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3248005C-D771-4C15-9A49-51150DB96C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3248005C-D771-4C15-9A49-51150DB96C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3248005C-D771-4C15-9A49-51150DB96C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3248005C-D771-4C15-9A49-51150DB96C70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0473A61C-FF70-458B-B9B6-30C0DAEA7784} = {1F775624-A479-4874-9C16-E6199E44BF0B}
-		{6F945356-72E6-446E-8325-5089CC176D06} = {1F775624-A479-4874-9C16-E6199E44BF0B}
 		{034DF9F4-4BA8-4169-9FB9-8BB630A5DE25} = {1F775624-A479-4874-9C16-E6199E44BF0B}
 		{B29B419E-B199-436C-BA1D-AF3486A00327} = {1F775624-A479-4874-9C16-E6199E44BF0B}
+		{6F945356-72E6-446E-8325-5089CC176D06} = {1F775624-A479-4874-9C16-E6199E44BF0B}
+		{0473A61C-FF70-458B-B9B6-30C0DAEA7784} = {1F775624-A479-4874-9C16-E6199E44BF0B}
+		{3248005C-D771-4C15-9A49-51150DB96C70} = {1F775624-A479-4874-9C16-E6199E44BF0B}
 	EndGlobalSection
 EndGlobal
