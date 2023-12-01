@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using Healthcare.Domain.Patients;
 
 namespace Healthcare.Domain
 {
