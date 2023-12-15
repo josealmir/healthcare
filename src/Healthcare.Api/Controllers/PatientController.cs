@@ -1,13 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Healthcare.Domain.Patients;
 
 namespace Healthcare.Api.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class PatientController : ControllerBase
     {
+        private readonly IPatientAppService _appService;
+
+        public PatientController(IPatientAppService appService)
+            => _appService = appService;
+
         // GET: api/<PatientController>
         [HttpGet]
         public IActionResult Get()
