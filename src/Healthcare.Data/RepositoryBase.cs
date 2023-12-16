@@ -22,6 +22,6 @@ namespace Healthcare.Data
             => _dbContext.Set<T>().Update(entity);
 
         public async Task<T> FindByIdAsync(long id,  CancellationToken cancellationToken)
-            => await _dbContext.Set<T>().SingleAsync(x => x.Id == id, cancellationToken);
+             => await _dbContext.Set<T>().SingleAsync(x => x.Id == id, cancellationToken);
     }
 }

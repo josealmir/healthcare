@@ -4,8 +4,7 @@ using Healthcare.Domain.Patients;
 namespace Healthcare.Api.Controllers
 {
     [ApiController]
-    [ApiVersion("1.0")]
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/[controller]")]
     public class PatientController : ControllerBase
     {
         private readonly IPatientAppService _appService;
@@ -22,9 +21,9 @@ namespace Healthcare.Api.Controllers
 
         // GET api/<PatientController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return Ok("value");
+            return Ok( await _appService.GetPatientDtoAsync(id));
         }
 
         // POST api/<PatientController>
