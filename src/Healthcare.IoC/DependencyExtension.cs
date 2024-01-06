@@ -1,5 +1,6 @@
 using Healthcare.AppService;
 using Healthcare.Data;
+using Healthcare.Domain.Infra;
 using Healthcare.Domain.Patients;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,7 @@ namespace Healthcare.IoC
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
+            service.AddScoped<IUnitOfWork, UnitOfWork>();
             return service;
         }
         

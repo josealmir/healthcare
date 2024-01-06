@@ -14,14 +14,15 @@ namespace Healthcare.Domain.Patients
         private Patient()
         {}
 
-        public Patient(string firstName, string lastName, EGender gender)
+        public Patient(string firstName, string lastName, EGender gender, Address address)
         {
             ArgumentException.ThrowIfNullOrEmpty(firstName, nameof(firstName));
             ArgumentException.ThrowIfNullOrEmpty(lastName, nameof(lastName));
-            
+            ArgumentNullException.ThrowIfNull(address, nameof(address));
             FirstName = firstName;
             LastName = lastName;
             Gender = gender;
+            Address = address;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Healthcare.Domain.Patients
                 Id = patient.Id,
                 FirstName = patient.FirstName,
                 LastName = patient.LastName,
-                CreatedIn = patient.CreatedIn,
+                UpdatedIn = patient.UpdatedIn,
             };
 
     }
