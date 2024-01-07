@@ -1,5 +1,6 @@
 
 using Healthcare.Api.Builders;
+using Healthcare.IoC;
 
 namespace Healthcare.Api
 {
@@ -14,7 +15,7 @@ namespace Healthcare.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            
+            builder.Services.AddDependency(builder.Configuration);    
             builder.Services.AddCors(cors => 
             {
                 cors.AddDefaultPolicy(policy => 

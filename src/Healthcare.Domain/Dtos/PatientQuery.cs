@@ -1,3 +1,5 @@
+using Healthcare.Domain.Enuns;
+
 namespace Healthcare.Domain.Dtos
 {
     public sealed class PatientQuery
@@ -5,6 +7,7 @@ namespace Healthcare.Domain.Dtos
         public long Id { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
-        public DateTimeOffset CreatedIn { get; set; }
+        public EGender Gender { get; set; }
+        public DateTimeOffset? UpdatedIn { get; set; }
     }
 }
