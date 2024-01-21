@@ -40,8 +40,12 @@ namespace Healthcare.Api
 
             app.UseApplyMigrations();
             app.UseHttpsRedirection();
+
+            app.UseRouting();
             
             app.UseCors();
+            app.UseStatusCodePages();
+
             app.UseAuthorization();
 
             app.MapControllers();

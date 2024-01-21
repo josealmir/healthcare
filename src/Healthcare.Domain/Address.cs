@@ -1,3 +1,4 @@
+using Healthcare.Domain.Dtos;
 using Healthcare.Domain.Enuns;
 
 namespace Healthcare.Domain
@@ -23,6 +24,9 @@ namespace Healthcare.Domain
         public string District {get; private set; } = string.Empty;
         public EUF UF { get; private set; }
 
+        private Address () 
+        {}
+
         protected internal static Address From(string street, string city, string zipCode, string district, EUF UF)
         {
             return new Address
@@ -34,5 +38,15 @@ namespace Healthcare.Domain
                 UF = UF
             };
         }
+        
+        public static implicit operator AddressDto(Address address)
+            => new()
+            {
+                City = address.City,
+                District = address.District,
+                Street = address.Street,
+                UF = address.UF
+            };
+
     }
 }
