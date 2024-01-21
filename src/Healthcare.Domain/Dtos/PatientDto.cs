@@ -1,11 +1,14 @@
 using Healthcare.Domain.Enuns;
+using Healthcare.Domain.Patients;
 
 namespace Healthcare.Domain.Dtos
 {
-    public sealed class PatientDto
+    public abstract record PatientDto
     {
-        public long Id { get; set; }
-        public string FullName { get; set; } = string.Empty;
-        public EGender Gender  { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public EGender Gender { get; set; }
+        public AddressDto? Address { get; set; }
+   
     }
 }

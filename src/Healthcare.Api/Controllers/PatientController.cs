@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Healthcare.Domain.Patients;
 using Healthcare.Domain.Dtos;
+using System.Net;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Healthcare.Api.Controllers
 {
@@ -17,24 +19,37 @@ namespace Healthcare.Api.Controllers
         public async Task<IActionResult> Get()
             => Ok(await _appService.GetAsync());
 
-        // GET api/<PatientController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
-            => Ok(await _appService.GetPatientDtoAsync(id));
+        public async Task<IActionResult> Get(int id)            
+        {
+            var result = await _appService.GetPatientDtoAsync(id);
+            
+            if (result is null)
+               return NotFound();
+            
+            return Ok(result);
+        }
 
-        // POST api/<PatientController>
         [HttpPost]
         public async Task<IActionResult> Post(PatientCreate request)
         {
-            var id = await _appService.CreateAsync(request);
-            return CreatedAtAction("api/Patient/", id);
+            if (ModelState.IsValid)
+            {
+                var id = await _appService.CreateAsync(request);
+                return CreatedAtAction("api/Patient/", id);
+            }
+            return BadRequest(ModelState);
         }
 
-        // PUT api/<PatientController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(long id, PatientUpdate request)
         {
-            return Ok();
+            if (ModelState.IsValid)
+            {
+                await _appService.UpdateAsync(request, id);
+                return Ok();
+            }
+            return BadRequest(ModelState);
         }
 
         // DELETE api/<PatientController>/5

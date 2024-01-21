@@ -25,6 +25,17 @@ namespace Healthcare.AppService
             return patient.Id;
         }
 
+        public async Task UpdateAsync(PatientUpdate patientUpdate, long id)
+        {
+            ArgumentNullException.ThrowIfNull(nameof(patientUpdate));
+            
+            var patient = await _repository.FindByIdAsync(id, CancellationToken.None);
+            patient = patientUpdate;
+
+            _repository.Update(patient);
+            await _unitOfWork.SaveChangeAsync();
+        }
+
         public async Task DeleteAsync(long id)
         {
             await _repository.DeleteAsync(id);
@@ -34,9 +45,9 @@ namespace Healthcare.AppService
         public async Task<IEnumerable<PatientQuery>> GetAsync()
             => await _repository.GetAsync();
 
-        public async Task<PatientDto> GetPatientDtoAsync(long id)
+        public async Task<PatientUpdate> GetPatientDtoAsync(long id)
         {
-            var patient = await _repository.FindByIdAsync( id, CancellationToken.None);
+            var patient = await _repository.FindByIdAsync(id, CancellationToken.None);            
             return patient;
         }
     }

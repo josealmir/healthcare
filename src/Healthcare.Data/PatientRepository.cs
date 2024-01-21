@@ -17,7 +17,7 @@ public sealed class PatientRepository :
         return await Task.FromResult(list ?? Enumerable.Empty<PatientQuery>());
     }
 
-    public async Task DeleteAsyn(long id)
+    public async Task DeleteAsync(long id)
     {
         FormattableString delete = $"DELETE FROM Patients WHERE Id = {id}";
         await _dbContext.Database.ExecuteSqlAsync(delete);
